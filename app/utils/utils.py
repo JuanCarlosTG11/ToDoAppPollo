@@ -14,19 +14,20 @@ class Task(pydantic.BaseModel):
     title: str
     description: str
     status: str = TaskStatus.PENDING.value
-    timestamp: str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  
+    timestamp: str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-def get_tasks(path:str="./data/data.json"):
+def get_tasks(path: str = "./data/data.json"):
     try:
         with open(path, "r") as file:
             data = json.load(file)
-            return data["tasks "]
-    except Exception as e:
+            return data["tasks"]
+    except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
         print(f"Error loading tasks: {e}")
-      
-def save_task(task:list, path:str="./data/data.json"):
+        return []
+
+def save_task(tasks: list, path: str = "./data/data.json"):
     try:
         with open(path, "w") as f:
-            json.dump({"tasks ": task}, f, indent=4)
+            json.dump({"tasks": tasks}, f, indent=4)
     except Exception as e:
         print(f"Error saving tasks in {path}: {e}")

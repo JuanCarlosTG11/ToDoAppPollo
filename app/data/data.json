@@ -1,12 +1,25 @@
 {
     "tasks": [
         {
-            "id": 0,
-            "title": "Chispas",
-            "desc": "Trapness",
-            "status": "Pending",
-            "timestamp": ""
-
+            "id": 1,
+            "title": "Comprar la despensa",
+            "description": "Comprar leche y huevos",
+            "status": "In Progress",
+            "timestamp": "2025-09-19 17:53:42"
+        },
+        {
+            "id": 2,
+            "title": "Hacer la tarea",
+            "description": "Entregar el reporte a las 5pm",
+            "status": "COMPLETED",
+            "timestamp": "2025-09-22 10:00:00"
+        },
+        {
+            "id": 3,
+            "title": "runrun",
+            "description": "runrun",
+            "status": "PENDING",
+            "timestamp": "2025-09-22 17:06:44"
         }
     ]
 }
